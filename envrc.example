@@ -1,0 +1,6 @@
+layout_pipenv
+
+export GRASSBIN=/usr/local/bin/grass74
+export GISBASE=$($GRASSBIN --config path)
+export LD_LIBRARY_PATH=$GISBASE/lib:$LD_LIBRARY_PATH
+export PYTHONPATH=$GISBASE/etc/python:$PYTHONPATH

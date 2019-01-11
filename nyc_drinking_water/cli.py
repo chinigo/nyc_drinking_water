@@ -26,16 +26,17 @@ class Cli:
                 action='store_true')
 
         klassmap = {
-            'ingest_dem': ingest_dem.IngestDEM,
-            'hillshade': hillshade.Hillshade,
-            'basins': basins.Basins,
-            'reservoirs': reservoirs.Reservoirs,
-            'watersheds': watersheds.Watersheds
+            'all':        [run_all.RunAll, 'Run all steps in dependency order.'],
+            'ingest_dem': [ingest_dem.IngestDEM, 'Ingest and concatenate input DEMs.'],
+            'hillshade':  [hillshade.Hillshade, 'Calculate pretty 3D hillshade from concatenated DEM.'],
+            'basins':     [basins.Basins, 'Calculate drainage basins and stream network from concatenated DEM.'],
+            'reservoirs': [reservoirs.Reservoirs, 'Ingest reservoir definitions, given TIGER dataset.'],
+            'watersheds': [watersheds.Watersheds, 'Calculate watersheds for each reservoir from drainage basins.']
         }
 
         subparsers = parser.add_subparsers(title='commands')
-        for kommand, klass in klassmap.iteritems():
-            subcommand = subparsers.add_parser(kommand)
+        for (kommand, (klass, help)) in klassmap.iteritems():
+            subcommand = subparsers.add_parser(kommand, help=help)
             subcommand.set_defaults(klass=klass)
 
         return parser

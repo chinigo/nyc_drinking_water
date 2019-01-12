@@ -3,7 +3,7 @@ from logzero import logger
 import psycopg2
 from psycopg2.extras import LoggingConnection
 
-__all__ = ['run_all', 'ingest_dem', 'hillshade', 'basins', 'reservoirs', 'watersheds']
+__all__ = ['run_all', 'ensure_postgis', 'ingest_dem', 'hillshade', 'basins', 'reservoirs', 'watersheds']
 
 
 class Base(object):

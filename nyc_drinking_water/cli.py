@@ -33,12 +33,13 @@ class Cli:
                 )
 
         klassmap = {
-            'all':        [run_all.RunAll, 'Run all steps in dependency order.'],
-            'ingest_dem': [ingest_dem.IngestDEM, 'Ingest and concatenate input DEMs.'],
-            'hillshade':  [hillshade.Hillshade, 'Calculate pretty 3D hillshade from concatenated DEM.'],
-            'basins':     [basins.Basins, 'Calculate drainage basins and stream network from concatenated DEM.'],
-            'reservoirs': [reservoirs.Reservoirs, 'Ingest reservoir definitions, given TIGER dataset.'],
-            'watersheds': [watersheds.Watersheds, 'Calculate watersheds for each reservoir from drainage basins.']
+            'all':            [run_all.RunAll, 'Run all steps in dependency order.'],
+            'ensure_postgis': [ensure_postgis.EnsurePostGIS, 'Install PostGIS and custom projection.'],
+            'ingest_dem':     [ingest_dem.IngestDEM, 'Ingest and concatenate input DEMs.'],
+            'hillshade':      [hillshade.Hillshade, 'Calculate pretty 3D hillshade from concatenated DEM.'],
+            'basins':         [basins.Basins, 'Calculate drainage basins and stream network from concatenated DEM.'],
+            'reservoirs':     [reservoirs.Reservoirs, 'Ingest reservoir definitions, given TIGER dataset.'],
+            'watersheds':     [watersheds.Watersheds, 'Calculate watersheds for each reservoir from drainage basins.']
         }
 
         subparsers = parser.add_subparsers(title='commands')

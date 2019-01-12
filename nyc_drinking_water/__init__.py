@@ -2,6 +2,7 @@ import os
 import sys
 
 data_dir = os.path.abspath(os.path.dirname(__file__) + '/../data')
+srid       = '200100'
 projection = 'EPSG:2260'
 
 class HiddenPrints(object):

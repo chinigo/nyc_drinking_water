@@ -5,6 +5,7 @@
   $ brew install grass7
   $ cp envrc.example .envrc
   $ pipenv install
+  $ ./bin/nyc_drinking_water ensure_postgis
   $ ./bin/nyc_drinking_water --help
   ```
 

@@ -25,6 +25,13 @@ class Cli:
                 default=False,
                 action='store_true')
 
+        parser.add_argument(
+                '-c',
+                '--connection',
+                default='postgres://localhost/ndw',
+                help='Connection string to PostGIS database containing TIGER data.'
+                )
+
         klassmap = {
             'all':        [run_all.RunAll, 'Run all steps in dependency order.'],
             'ingest_dem': [ingest_dem.IngestDEM, 'Ingest and concatenate input DEMs.'],

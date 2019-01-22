@@ -2,5 +2,7 @@ layout_pipenv
 
 export GRASSBIN=/usr/local/bin/grass74
 export GISBASE=$($GRASSBIN --config path)
+export GDAL_PYTHON=/usr/local/Cellar/gdal2-python/2.4.0/lib/python2.7/site-packages
+
 export LD_LIBRARY_PATH=$GISBASE/lib:$LD_LIBRARY_PATH
 export PYTHONPATH=$GISBASE/etc/python:$PYTHONPATH

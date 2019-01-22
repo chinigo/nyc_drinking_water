@@ -1,8 +1,17 @@
+- Install dependencies
+  ```
+  $ brew tap osgeo/osgeo4mac
+  $ brew install postgres
+  $ brew install postgis2 --build-from-source
+  $ brew install grass7 --with-postgresql --with-libpq --with-matplotlib
+  $ brew install gdal2 --with-postgresql --with-sfcgal --with-armadillo --with-qhull --with-opencl --with-libkml
+  $ brew install gdal2-pdf --with-poppler
+  $ brew install qgis3 --with-grass
+  ```
 - Install direnv as per https://direnv.net/
 - Install pipenv as per https://github.com/pypa/pipenv
 -
   ```sh
-  $ brew install grass7
   $ cp envrc.example .envrc
   $ pipenv install
   $ ./bin/nyc_drinking_water ensure_postgis

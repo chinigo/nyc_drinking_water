@@ -1,7 +1,7 @@
 from grass.script import core as gscript
 from logzero import logger
 
-from nyc_drinking_water import projection, HiddenPrints
+from . import projection, HiddenPrints
 with HiddenPrints(): from grass_session import Session
 
 
@@ -16,6 +16,7 @@ class GrassWrapper(object):
             gscript._debug_level = 5
 
         self._open_session()
+        self.run_command('g.proj', proj4=projection.proj4, flags='c')
 
     def run_command(self, command, **kwargs):
         kwargs.update(
@@ -29,10 +30,7 @@ class GrassWrapper(object):
 
     def _open_session(self):
         self.session = Session()
-        self.session.open(
-                gisdb=gisdb,
-                location=location,
-                create_opts=projection)
+        self.session.open(gisdb=gisdb, location=location, create_opts='EPSG:4326')
 
     def __del__(self):
         self.session.close()

@@ -39,7 +39,8 @@ class Cli:
             'hillshade':      [hillshade.Hillshade, 'Calculate pretty 3D hillshade from concatenated DEM.'],
             'basins':         [basins.Basins, 'Calculate drainage basins and stream network from concatenated DEM.'],
             'reservoirs':     [reservoirs.Reservoirs, 'Ingest reservoir definitions, given TIGER dataset.'],
-            'watersheds':     [watersheds.Watersheds, 'Calculate watersheds for each reservoir from drainage basins.']
+            'watersheds':     [watersheds.Watersheds, 'Calculate watersheds for each reservoir from drainage basins.'],
+            'pipelines':      [pipelines.Pipelines, 'Georeference pipelines.']
         }
 
         subparsers = parser.add_subparsers(title='commands')

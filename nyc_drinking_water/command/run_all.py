@@ -12,7 +12,8 @@ class RunAll(Base):
             command.hillshade.Hillshade,
             command.basins.Basins,
             command.reservoirs.Reservoirs,
-            command.watersheds.Watersheds
+            command.watersheds.Watersheds,
+            command.pipelines.Pipelines
         ]
 
         for cmd in all_commands:

@@ -24,18 +24,19 @@ class Basins(Base):
     def _constrain_region(self):
         logger.info('Constraining region.')
         self.grass.run_command('g.region',
-                nsres='27.0332',
-                ewres='27.0169',
-                n='1189099.2',
-                s='765002.6',
-                w='391853.9',
-                e='756447.2')
+                ewres='27.0218',
+                nsres='27.0342',
+                n='82962.8',
+                e='81301',
+                s='-156060.2',
+                w='-146082.6',
+                )
 
     def _calculate_basins(self):
         logger.info('Calculating watershed basins.')
         self.grass.run_command('r.watershed',
                 elevation=input_layer,
-                threshold=100000,     # cell units
+                threshold=10000,     # cell units
                 drainage=output_drainage,
                 basin=tmp_basin,
                 stream=tmp_stream,

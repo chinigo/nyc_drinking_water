@@ -1,3 +1,7 @@
+# Results
+![Rendered map of watersheds and pipelines](sample.jpeg?raw=true "Rendered map of watersheds and pipelines")
+
+# Procedure
 - Install dependencies
   ```
   $ brew tap osgeo/osgeo4mac
@@ -26,6 +30,3 @@
   ```sh
   $ ./bin/nyc_drinking_water run_all
   ```
-
-# Results
-![Rendered map of watersheds and pipelines](sample.jpeg?raw=true "Rendered map of watersheds and pipelines")
